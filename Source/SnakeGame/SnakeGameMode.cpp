@@ -54,11 +54,52 @@ ASnakeGameMode::ASnakeGameMode()
 void ASnakeGameMode::BeginPlay()
 {
     Super::BeginPlay();
+
+    // if V2‐mode is enabled, spawn multiple layers
+    if (bEnable3DDepthLevel)
+    {
+        LayerWorlds.Empty();
+        for (int32 LayerIndex = 0; LayerIndex < NumLayers; ++LayerIndex)
+        {
+            // position each world at Z = LayerIndex * LayerSeparation
+            FTransform LayerTransform(
+                FRotator::ZeroRotator,
+                FVector(0.f, 0.f, LayerIndex * LayerSeparation)
+            );
+
+            if (SnakeWorldBP)
+            {
+                ASnakeWorld* NewWorld = GetWorld()->SpawnActor<ASnakeWorld>(
+                    SnakeWorldBP,
+                    LayerTransform
+                );
+                if (NewWorld)
+                {
+                    LayerWorlds.Add(NewWorld);
+                }
+            }
+        }
+    }
+    else
+    {
+        // fallback: single playfield at Z=0
+        if (SnakeWorldBP)
+        {
+            ASnakeWorld* World = GetWorld()->SpawnActor<ASnakeWorld>(
+                SnakeWorldBP,
+                FTransform::Identity
+            );
+            LayerWorlds = { World };
+        }
+    }
+
+    // now continue with your existing UI/sound setup
     SetGameState(CurrentState);
     if (AmbientSound)
     {
-        UGameplayStatics::SpawnSound2D(GetWorld(), AmbientSound);
-        AmbientAudioComponent = UGameplayStatics::SpawnSound2D(GetWorld(), AmbientSound);
+        AmbientAudioComponent = UGameplayStatics::SpawnSound2D(
+            GetWorld(), AmbientSound
+        );
     }
 }
 

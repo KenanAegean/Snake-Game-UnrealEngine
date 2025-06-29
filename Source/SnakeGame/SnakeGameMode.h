@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "SnakePawn.h"
 #include "Sound/SoundBase.h"
+#include "SnakeWorld.h"
 #include "GameFramework/GameModeBase.h"
 #include "Internationalization/Text.h"
 #include "SnakeGameMode.generated.h"
@@ -43,7 +44,21 @@ class SNAKEGAME_API ASnakeGameMode : public AGameModeBase
 public:
     ASnakeGameMode();
 
-    
+    // Blueprint to use for spawning playfield layers
+    UPROPERTY(EditDefaultsOnly, Category="Spawning")
+    TSubclassOf<ASnakeWorld> SnakeWorldBP;
+
+    // Holds all active layer‐world instances
+    UPROPERTY()
+    TArray<ASnakeWorld*> LayerWorlds;
+
+    // Number of simultaneous playfields (layers) to create
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="V2")
+    int32 NumLayers = 3;
+
+    // Vertical spacing (in cm) between each layer
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="V2")
+    float LayerSeparation = 1000.f;
     
 
     // ←— simple getter if you prefer    

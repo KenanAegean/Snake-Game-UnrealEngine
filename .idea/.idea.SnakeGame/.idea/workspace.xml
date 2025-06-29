@@ -14,8 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8cd02a94-51cf-463b-9820-56d62fad9c3b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_InGame.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_InGame.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameMode/BP_SnakeGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/GameMode/BP_SnakeGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.h" afterDir="false" />
     </list>
