@@ -8,8 +8,8 @@ public class SnakeGameTarget : TargetRules
 	public SnakeGameTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V5;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_5;
+		DefaultBuildSettings = BuildSettingsVersion.V6;
+		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.Add("SnakeGame");
 	}
 }

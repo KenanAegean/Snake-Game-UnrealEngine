@@ -37,17 +37,17 @@ EGameType ASnakeGameMode::ToBaseVariant(EGameType Type)
 }
 
 ASnakeGameMode::ASnakeGameMode()
-    : CurrentWidget(nullptr)
-    , PauseWidget(nullptr)
-    , InGameWidget(nullptr)
-    , SpawnedAISnake(nullptr)
+    : InGameWidget(nullptr)
     , ApplesToFinish(5)
     , ApplesEaten(0)
     , Score(0)
+    , CurrentGameType(EGameType::SinglePlayer)
+    , CurrentWidget(nullptr)
+    , PauseWidget(nullptr)
+    , CurrentState(EGameState::MainMenu)
+    , SpawnedAISnake(nullptr)
     , LevelApplesP1(0)
     , LevelApplesP2(0)
-    , CurrentGameType(EGameType::SinglePlayer)
-    , CurrentState(EGameState::MainMenu)
 {
 }
 
@@ -526,8 +526,7 @@ void ASnakeGameMode::RestartGame()
 
 FText ASnakeGameMode::GetCurrentGameTypeText() const
 {
-    // find the enum by name
-    const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EGameType"));
+    const UEnum* EnumPtr = StaticEnum<EGameType>();
     if (!EnumPtr)
     {
         return FText::FromString(TEXT("Unknown"));
@@ -536,4 +535,3 @@ FText ASnakeGameMode::GetCurrentGameTypeText() const
     // return its DisplayName (what you set in UMETA(DisplayName="…"))
     return EnumPtr->GetDisplayNameTextByValue(static_cast<int64>(CurrentGameType));
 }
-
