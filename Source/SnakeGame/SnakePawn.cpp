@@ -408,6 +408,43 @@ void ASnakePawn::SetNextDirection(ESnakeDirection InDirection)
 	DirectionQueue.Add(InDirection);
 }
 
+bool ASnakePawn::IsOppositeDirection(ESnakeDirection A, ESnakeDirection B) const
+{
+	return (A == ESnakeDirection::Up && B == ESnakeDirection::Down) ||
+	       (A == ESnakeDirection::Down && B == ESnakeDirection::Up) ||
+	       (A == ESnakeDirection::Left && B == ESnakeDirection::Right) ||
+	       (A == ESnakeDirection::Right && B == ESnakeDirection::Left);
+}
+
+void ASnakePawn::AddDirectionToQueue(ESnakeDirection NewDirection)
+{
+	ESnakeDirection CheckAgainst = DirectionQueue.Num() > 0 ? DirectionQueue.Last() : Direction;
+	
+	// Don't allow opposite direction (can't do 180 turn)
+	if (IsOppositeDirection(NewDirection, CheckAgainst))
+	{
+		return;
+	}
+	
+	// Don't add if it's the same as the last queued direction
+	if (DirectionQueue.Num() > 0 && DirectionQueue.Last() == NewDirection)
+	{
+		return;
+	}
+	
+	// Don't add if queue is empty and it's same as current direction
+	if (DirectionQueue.Num() == 0 && Direction == NewDirection)
+	{
+		return;
+	}
+	
+	// Limit queue size to prevent input buffering issues
+	if (DirectionQueue.Num() < 3)
+	{
+		DirectionQueue.Add(NewDirection);
+	}
+}
+
 void ASnakePawn::GrowTail()
 {
 	if (!GetWorld())

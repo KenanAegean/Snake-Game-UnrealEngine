@@ -70,6 +70,9 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (ToolTip = "Add a direction onto a queue where the first in line direction gets set and popped."))
 	void SetNextDirection(ESnakeDirection InDirection);
 	
+	UFUNCTION(BlueprintCallable, Category = "Snake")
+	void AddDirectionToQueue(ESnakeDirection NewDirection);
+	
 	UFUNCTION()
 	void OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	                    UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
@@ -135,4 +138,6 @@ private:
 								 const FHitResult& SweepResult);
 	
 	void HideQuestionMark();
+	
+	bool IsOppositeDirection(ESnakeDirection A, ESnakeDirection B) const;
 };

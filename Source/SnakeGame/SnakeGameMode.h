@@ -2,6 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "SnakePawn.h"
+#include "SnakePlayerState.h"
+#include "SnakePlayerController.h"
 #include "Sound/SoundBase.h"
 #include "GameFramework/GameModeBase.h"
 #include "Internationalization/Text.h"
@@ -45,27 +47,21 @@ public:
 
     
     
-
-    // ←— simple getter if you prefer    
     UFUNCTION(BlueprintPure, Category="GameType")
     EGameType GetCurrentGameType() const
     {
         return CurrentGameType;
     }
-
-    // ←— helper to get an FText you can bind directly
+    
     UFUNCTION(BlueprintPure, Category="GameType")
     FText GetCurrentGameTypeText() const;
 
-    // ─── NEW: toggle 3D‐DepthLevel remapping ─────────────────────────
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="GameType")
     bool bEnable3DDepthLevel = false;
 
-    /** Maps a base game type → its V2 variant (no-op if already V2 or unknown) */
     UFUNCTION(BlueprintCallable, Category="GameType")
     static EGameType ToV2Variant(EGameType BaseType);
 
-    /** Maps any V2 variant → its base type (no-op for non-V2) */
     UFUNCTION(BlueprintCallable, Category="GameType")
     static EGameType ToBaseVariant(EGameType Type);
 

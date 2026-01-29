@@ -5,6 +5,8 @@
 #include "GameFramework/PlayerController.h"
 #include "SnakeWorld.h"
 #include "SnakeAIController.h"
+#include "SnakePlayerState.h"
+#include "SnakePlayerController.h"
 #include "Engine/LocalPlayer.h"
 #include "GameFramework/PlayerStart.h"
 #include "EngineUtils.h"
@@ -49,11 +51,25 @@ ASnakeGameMode::ASnakeGameMode()
     , LevelApplesP1(0)
     , LevelApplesP2(0)
 {
+    // Set the custom PlayerState and PlayerController classes
+    PlayerStateClass = ASnakePlayerState::StaticClass();
+    PlayerControllerClass = ASnakePlayerController::StaticClass();
 }
 
 void ASnakeGameMode::BeginPlay()
 {
     Super::BeginPlay();
+    
+    // Set Player 1's controller type to Keyboard1
+    if (APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0))
+    {
+        if (ASnakePlayerState* PS = Cast<ASnakePlayerState>(PC->PlayerState))
+        {
+            PS->SetSnakeControllerType(ESnakeControllerType::Keyboard1);
+            UE_LOG(LogTemp, Log, TEXT("Player 0 set to Keyboard1"));
+        }
+    }
+    
     SetGameState(CurrentState);
     if (AmbientSound)
     {
@@ -189,6 +205,22 @@ void ASnakeGameMode::PostLogin(APlayerController* NewPlayer)
     Super::PostLogin(NewPlayer);
 
     int32 Id = NewPlayer->GetLocalPlayer()->GetControllerId();
+    
+    // Set the controller type based on player ID
+    if (ASnakePlayerState* PS = Cast<ASnakePlayerState>(NewPlayer->PlayerState))
+    {
+        if (Id == 0)
+        {
+            PS->SetSnakeControllerType(ESnakeControllerType::Keyboard1);
+            UE_LOG(LogTemp, Log, TEXT("PostLogin: Player %d set to Keyboard1"), Id);
+        }
+        else if (Id == 1)
+        {
+            PS->SetSnakeControllerType(ESnakeControllerType::Keyboard2);
+            UE_LOG(LogTemp, Log, TEXT("PostLogin: Player %d set to Keyboard2"), Id);
+        }
+    }
+    
     if (Id == 1 && (CurrentGameType == EGameType::Coop || CurrentGameType == EGameType::PvP))
     {
         APlayerStart* TargetStart = nullptr;

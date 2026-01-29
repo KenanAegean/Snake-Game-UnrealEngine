@@ -15,22 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd02a94-51cf-463b-9820-56d62fad9c3b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vsconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.vsconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_AssetPlatform.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_AssetPlatform.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Basic_Floor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Basic_Floor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Basic_Wall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Basic_Wall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Metal_Burnished_Steel.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Metal_Burnished_Steel.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Metal_Chrome.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Metal_Chrome.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Particles/P_Explosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Particles/P_Explosion.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SnakeGame.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/SnakeGame.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SnakePlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_SnakePlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGameEditor.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGameEditor.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,6 +245,8 @@
       <workItem from="1768834201259" duration="74000" />
       <workItem from="1768834416120" duration="260000" />
       <workItem from="1768834759623" duration="662000" />
+      <workItem from="1769691929863" duration="2050000" />
+      <workItem from="1769697250578" duration="1583000" />
     </task>
     <servers />
   </component>
